@@ -13,7 +13,7 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({
-  title = "Portfolio",
+  title = "Aman Goswami",
   subtitle = "Graphic Design Portfolio 2025",
   profileImage = PROFILE_IMAGE,
 }: HeroSectionProps) {
@@ -60,7 +60,7 @@ export default function HeroSection({
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10">
           <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
-              <span className="text-[#C4FF00]">P</span>ortfolio
+              <span className="text-[#C4FF00]">Aman</span>Goswami
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8">{subtitle}</p>
             <Button className="bg-[#C4FF00] hover:bg-[#a3cc00] text-black font-bold px-8 py-6 text-lg rounded-md">
@@ -126,7 +126,7 @@ export default function HeroSection({
           : 'absolute top-0 bg-transparent'
       } w-full flex justify-between items-center p-6 z-50 transition-all duration-300`}>
         <div className="text-white text-xl font-bold cursor-pointer hover:scale-110 transition-transform">
-          <span className="text-[#C4FF00]">Design</span>Pro
+          <span className="text-[#C4FF00]">Aman</span>Goswami
         </div>
         <ul className="hidden md:flex space-x-8">
           {[

@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+    
+     output: 'export', 
     images: {
         domains: [
             'images.unsplash.com',
@@ -41,6 +43,7 @@ const nextConfig = {
     compiler: {
         removeConsole: process.env.NODE_ENV === 'production'
     }
+    
 };
 
 module.exports = nextConfig;
