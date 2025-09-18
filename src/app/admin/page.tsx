@@ -9,7 +9,7 @@ export default function AdminPage() {
 
   const handleLogin = (credentials: { username: string; password: string }) => {
     // Simple authentication check
-    if (credentials.username === "admin" && credentials.password === "admin123") {
+    if (credentials.username === "admin" && credentials.password === "Aman@1431") {
       setIsAuthenticated(true);
     }
   };
