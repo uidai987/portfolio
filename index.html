@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesignPro - Modern Graphic Design Portfolio</title>
+    <meta name="description" content="Professional graphic design portfolio showcasing creative work in branding, logo design, web design, and more.">
+    <meta name="keywords" content="graphic design, portfolio, branding, logo design, web design, creative services">
+    <meta name="author" content="DesignPro">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="DesignPro - Modern Graphic Design Portfolio">
+    <meta property="og:description" content="Professional graphic design portfolio showcasing creative work in branding, logo design, web design, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&q=80">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DesignPro - Modern Graphic Design Portfolio">
+    <meta name="twitter:description" content="Professional graphic design portfolio showcasing creative work in branding, logo design, web design, and more.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&q=80">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .logo .highlight {
+            color: #C4FF00;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 2rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #333;
+            border-top: 2px solid #C4FF00;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        .loading-text {
+            color: #C4FF00;
+            font-weight: 500;
+        }
+        
+        .redirect-info {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        .manual-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: #C4FF00;
+            color: black;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 3s ease-out 2s forwards;
+        }
+        
+        .manual-link:hover {
+            background: #a3cc00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(196, 255, 0, 0.3);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #C4FF00, 0 0 20px #C4FF00, 0 0 30px #C4FF00;
+            }
+            to {
+                text-shadow: 0 0 20px #C4FF00, 0 0 30px #C4FF00, 0 0 40px #C4FF00;
+            }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Background animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 80%, rgba(196, 255, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(196, 255, 0, 0.1) 0%, transparent 50%);
+            animation: backgroundPulse 4s ease-in-out infinite alternate;
+            z-index: -1;
+        }
+        
+        @keyframes backgroundPulse {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            Design<span class="highlight">Pro</span>
+        </div>
+        <div class="subtitle">
+            Modern Graphic Design Portfolio
+        </div>
+        
+        <div class="loading">
+            <div class="spinner"></div>
+            <span class="loading-text">Loading Portfolio...</span>
+        </div>
+        
+        <div class="redirect-info">
+            Redirecting to the main application...
+        </div>
+        
+        <a href="/src/app/page.tsx" class="manual-link" id="manualLink">
+            Enter Portfolio
+        </a>
+    </div>
+
+    <script>
+        // Auto-redirect after 3 seconds
+        setTimeout(function() {
+            // Try different possible paths for Next.js app
+            const possiblePaths = [
+                '/src/app/page.tsx',
+                '/app/page.tsx', 
+                '/page.tsx',
+                '/index.tsx',
+                '/home',
+                '/'
+            ];
+            
+            // Try to redirect to the main app
+            window.location.href = possiblePaths[0];
+        }, 3000);
+        
+        // Show manual link after 2 seconds
+        setTimeout(function() {
+            document.getElementById('manualLink').style.display = 'inline-block';
+        }, 2000);
+        
+        // Handle manual link click
+        document.getElementById('manualLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Try different paths
+            const paths = [
+                '/src/app/page.tsx',
+                '/app/page.tsx',
+                '/page.tsx',
+                '/index.tsx',
+                '/home',
+                '/'
+            ];
+            
+            // Try each path until one works
+            let currentPath = 0;
+            function tryNextPath() {
+                if (currentPath < paths.length) {
+                    window.location.href = paths[currentPath];
+                    currentPath++;
+                } else {
+                    alert('Unable to find the main application. Please check your server configuration.');
+                }
+            }
+            
+            tryNextPath();
+        });
+        
+        // Add some interactive particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = '2px';
+            particle.style.height = '2px';
+            particle.style.background = '#C4FF00';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.opacity = '0.7';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = window.innerHeight + 'px';
+            particle.style.zIndex = '-1';
+            
+            document.body.appendChild(particle);
+            
+            const animation = particle.animate([
+                { transform: 'translateY(0px)', opacity: 0.7 },
+                { transform: `translateY(-${window.innerHeight + 100}px)`, opacity: 0 }
+            ], {
+                duration: Math.random() * 3000 + 2000,
+                easing: 'linear'
+            });
+            
+            animation.onfinish = () => particle.remove();
+        }
+        
+        // Create particles periodically
+        setInterval(createParticle, 300);
+    </script>
+</body>
+</html>
